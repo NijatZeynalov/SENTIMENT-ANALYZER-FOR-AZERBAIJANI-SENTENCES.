@@ -1,5 +1,7 @@
 # SENTIMENT-ANALYZER-FOR-AZERBAIJANI-SENTENCES.
-The goal of most sentiment tasks is to identify the overall sentiment polarity of the documents in question, i.e. is the sentiment of the document positive or negative? For our case, we will enter sentence in Azerbaijani and model will predict its sentiment. In order to perform this sentiment task, we use a mixture of baseline machine learning models and deep learning models to learn and predict the sentiment of binary reviews. I have implemented Multi Layer Perceptron model to learn and predict the sentiment of sentence.
+The goal of most sentiment tasks is to identify the overall sentiment polarity of the documents in question, i.e. is the sentiment of the document positive or negative? For our case, we will enter sentence in Azerbaijani and model will predict its sentiment. In order to perform this sentiment task, we use a mixture of baseline machine learning models and deep learning models to learn and predict the sentiment of binary reviews. 
+
+__I have implemented Multi Layer Perceptron model to learn and predict the sentiment of sentences__
 
 
 ![ezgif com-video-to-gif (4)](https://user-images.githubusercontent.com/31247506/85158547-2c20a780-b265-11ea-8c08-778d03ade10a.gif)
