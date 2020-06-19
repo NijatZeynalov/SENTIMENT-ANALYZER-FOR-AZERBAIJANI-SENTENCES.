@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Directive by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='js/main.js')}}" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Header -->
+    <div style="background-color: #4EB980;" id="header">
+        <span class="logo icon fa-paper-plane"></span>
+        <h1>Sentiment Analyzer for Azerbaijani Sentences.</h1>
+        <p>I have implemented Multi Layer Perceptron model to learn and predict the sentiment of sentence.</a>
+            <br /> This project is released for under the <a href="http://html5up.net/license">Creative Commons license</a>.</p>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+        <header class="major container medium">
+            <p> 'Sentiment Analyzer' </p>
+        </header>
+        <section id="user-input">
+            <div class="container">
+
+                <form action="{{ url_for('predict')}}" method="post">
+                    <div  class="form-group">
+                        <label class="sentiment-label" >Sentence</label>
+                        <input type="text" name="experience" placeholder="Experience" required="required" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6">
+                            <button style="background-color:#28A745;width:18rem;" type="submit" class="btn btn-success button btn-lg">Predict</button>
+                        </div>
+                </form>
+                        <div class="col-md-6 col-sm-6 col-lg-6 ">
+                            <button style="background-color:#28A745;width:18rem;" type="button" class="btn btn-success button btn-lg">Reset</button>
+                        </div>
+                    </div>
+                    <br>
+                        <p style="font-family:verdana;text-align:left" >{{prediction_text}}</p>
+                        <p style="font-family:verdana;text-align:left" >{{second_text}}</p>
+                </form>
+            </div>
+
+        </section>
+
+        <div class="box container">
+            <header>
+                <h2>A lot of generic stuff</h2>
+            </header>
+            <section>
+                <header>
+                    <h3>Divider</h3>
+                </header>
+                <p>The goal of most sentiment tasks is to identify the overall sentiment polarity of the documents in question, i.e. is the sentiment of the document positive or negative? For our case, we use online user reviews from the most popular Azerbaijan
+                    movies. In order to perform this sentiment task, we use a mixture of baseline machine learning models and deep learning models to learn and predict the sentiment of binary reviews.</p>
+                <p>This poses a supervised learning task. For this purpose, we will use bag-of-words features with machine learning algorithms which is very simply and efficient, while having the ability to achieve very high accuracy. In this paper, we will
+                    develop a neural bag-of-words model, which collects high-level structural and semantic meaning of the words. The paper performs sentiment classification via neural bag-of-words approach.</p>
+                <hr />
+            </section>
+
+            <section>
+                <header>
+                    <h3>The last predicted sentences </h3>
+                </header>
+                <div class="table-wrapper">
+                    <table class="default">
+                        <thead>
+                            <tr>
+                                <th>Sentiment value</th>
+                                <th>Sentence</th>
+                                <th>Sentiment percent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Positive</td>
+                                <td>{{second_text}}</td>
+                                <td>87</td>
+                            </tr>
+                            <tr>
+                                <td>Negative</td>
+                                <td>Pis adamsan</td>
+                                <td>59</td>
+                            </tr>
+                            <tr>
+                                <td>Something</td>
+                                <td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Nothing</td>
+                                <td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+                                <td>19.99</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <tfoot style="margin: 0 auto;">
+                        <tr>Last updated: 21/05/2020/01:39</tr>
+                    </tfoot>
+                </div>
+            </section>
+
+        </div>
+
+
+        <footer class="major container medium">
+            <h3>My other projects</h3>
+            <ul class="actions special">
+                <li><a href="#" class="button">Go to my github</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container medium">
+
+            <header class="major last">
+                <h2>Questions or comments?</h2>
+            </header>
+
+            <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
+
+            <form method="post" action="#">
+                <div class="row">
+                    <div class="col-6 col-12-mobilep">
+                        <input type="text" name="name" placeholder="Name" />
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="email" name="email" placeholder="Email" />
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" placeholder="Message" rows="6"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="Send Message" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            </ul>
+
+            <ul class="copyright">
+                <li>&copy; Nijat Zeynalov. All rights reserved.</li>
+                <li>Powered by: <a href="https://github.com/Bakhtiyar-Garashov">Bakhtiyar Garashov</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
