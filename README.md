@@ -4,7 +4,6 @@ The goal of most sentiment tasks is to identify the overall sentiment polarity o
 __I have implemented Multi Layer Perceptron model to learn and predict the sentiment of sentences__
 
 
-![ezgif com-video-to-gif (4)](https://user-images.githubusercontent.com/31247506/85158547-2c20a780-b265-11ea-8c08-778d03ade10a.gif)
 
 
 
